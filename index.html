@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Catálogo Streaming</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #0f0f0f;
+      color: #fff;
+      padding-bottom: 70px; /* espacio para el menú fijo */
+    }
+
+    header {
+      background-color: #000;
+      padding: 16px;
+      text-align: center;
+      border-bottom: 1px solid #222;
+    }
+
+    header img {
+      width: 160px;
+    }
+
+    .content {
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .item {
+      background-color: #1c1c1c;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .item:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 16px rgba(255, 0, 0, 0.5);
+    }
+
+    .item img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .item-title {
+      padding: 12px 16px;
+      font-size: 18px;
+      font-weight: 500;
+      text-align: center;
+    }
+
+    .bottom-menu {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: #000;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 10px 0;
+      border-top: 1px solid #333;
+      z-index: 999;
+    }
+
+    .bottom-menu a {
+      text-decoration: none;
+      color: #aaa;
+      font-size: 13px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: color 0.3s;
+    }
+
+    .bottom-menu a i {
+      font-size: 22px;
+      margin-bottom: 4px;
+    }
+
+    .bottom-menu a.active,
+    .bottom-menu a:hover {
+      color: #e50914;
+    }
+
+    @media (max-width: 600px) {
+      .item-title {
+        font-size: 16px;
+      }
+
+      .bottom-menu a i {
+        font-size: 20px;
+      }
+
+      .bottom-menu a {
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <a href="/">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi3dK3-XAKrEia-lWmiUqAYRfFQ1lR9eJX6ZZH8e_vHf576qf9GJjIWBW9Jg5LsilXX7WO2MOEkg5gzc4pESziaPeMJ9ws9mwtCDdp3p_17D0e0Uop_ZxavwwJeNLBvoyZJ0cxTKQpjzrJIR6LjJslB24tj-77AYrRCacQ3F2S2VPoXpPzPhM1zndxyd1Rg/s3307/B64D5386-DCA4-410B-A0A6-6ACB19D0A06F.png" alt="Logo Netflix">
+    </a>
+  </header>
+
+  <!-- CONTENIDO -->
+  <div class="content">
+    <!-- Aquí va la lista de plataformas como antes -->
+    <a href="go:apple" class="item">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiZ33tHlD10TYwBk99BtP1rSTXD2l75n0PUjnP0OMfMsKAStSDL0UgabZ7biIeh9ml0O1F00z1kvWwGksTG_USkF7PBwNrvcbNlosNQfgJlZGeWXkHZSqd3lBF0D9_fG_3p_dWwcMzeja3NkGwOoBZwi5Uf_kXbQa1RJibImptLCM-j9pEYpVUrOCWnV8yf/s1200/1200x630_AppleTVPlus.jpg" alt="Apple TV+">
+      <div class="item-title">Apple TV+</div>
+    </a>
+    <a href="https://cuentaappcreator.github.io/Disney/" class="item">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi6ZRt8WUfQqTUibM5UT3ddeSzji_l-7bv-tnIrx8HB7RMeg41yHcj6on7VZ6MeV3UpS6dlKi-5iujJTsuNR3ddwfeGKn0YjPJrWhQO3bmru0nYgGVVBB26XVdn1hNmjy_0iyZ2ZGUuKFOhxpHsh4jRd4G6AzMFrS7UwB6s85c-1wZ5OLOQZTTQarKH65BV/s1400/disney-plus-1400x825.jpg" alt="Disney+">
+      <div class="item-title">Disney+</div>
+    </a>
+    <a href="go:netflix" class="item">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi3duarQZ7gpX-6p52C6PrHmfKLDzs_OTrRMb-sFz-kEjUuv7aKZwP5S9805Y_KCEcU3EgSLQB6uKzYhMfVGl4GjiG-hmViribw6i6qxkJTk0mSee98FwA2Z1sAAurpsB4em0crnr9KSk7lbZ635VEJGb55k17mUc8nWg1pVmjjmK7haCe0u65UsVD7i8O6/s980/FXZ2B5FHVBFTFCONW5AEOP4Q4M.png" alt="Netflix">
+      <div class="item-title">Netflix</div>
+    </a>
+	<a href="go:fox" class="item">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgByPq0yN5ZYFb6pFgStUAihkhoVFO3ndX3rMFFUWsthvCZjzlQZlzfnhm4UnM_aGpzaPxGa9_DQU1iC03oayYPlvjoGbZlcaxRDXRr1meR2uorHXvghivm8ToZEnneuoz2PaA80X4RA7UMdFb_Cb8wnnFuriHP9FvM0zS8YUWVADqlUpqMmHVViFrw5gFU/s1200/WhatsApp%20Image%202025-05-28%20at%2012.31.46%20AM.jpeg" alt="Fox">
+      <div class="item-title">20th Century Fox</div>
+    </a>
+    <a href="go:hbo" class="item">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgkX3A9HdLxmwPq3o5diETX_9iOedZQbwzMzWlkbemmEN39w2ThplIK8zpmJ4D77qNZkdkmyv4XkL0tAJYgRS1iIkmvFC6w38qZoabarO6cCuOEgz17GFMn1Tp0LTYgLK_3F9Mt2vqRji5-Y2CY9GSFHOeuTDvBT7Hy0sLP8C_hE3h22DIXk3jyk7tcgfiL/s1000/1719919088_archive_max_tv_rz1000.jpeg" alt="HBO Max">
+      <div class="item-title">HBO/MAX</div>
+    </a>
+    <a href="go:pv" class="item">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhq0jxvBz2_zcnJ0ollVw9bqGErnGzv0D5u3UUwaD0SJ0tfgp1FZ_opJpiMGvz9YpR2DaJL6QSHOJ0147uVG-dQn1bRE3wUgFVsTJjVUvUC8QZFw8cb5ml0gRR2jcOgDGbz3FyuCon4CBc1Ae1bFaGNIlC4T3VrbjYUPlr_uuchnIDpWxH5tmOrXNc8c2_w/s631/6585c5c426a931289d4d1045.gif" alt="Prime Video">
+      <div class="item-title">Amazon / Prime Video</div>
+    </a>
+    <a href="go:param" class="item">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhuCVvqhBdJAEshZ0RS7CCdbnnpiF1cvyhhSkKHqnrjhbIVv_CK8XBsh15Orr0xAezcImamOIAOcIFFkn81Me-bI1YiFbOAKBrOjsUgsW8tcBkxCSmxX-QpY2bYoTc1thai5zwReEH9SqrztA9FT-4gw_NbUbn1iGSerTemL2ecxkDzJF8mdr0aXR1CtKzF/s1280/WhatsApp%20Image%202025-05-28%20at%2012.43.11%20AM.jpeg" alt="Paramount+">
+      <div class="item-title">Paramount+</div>
+    </a>
+    <a href="go:sony" class="item">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi4p2qCgkJ4NnanyRKlJOCOhGWDN2Wat2aNFLz6hPaInbGIYOPiEw4ZoCikveJ-Epi0vCk-ftbCqxao0UqUi_anCcSlnYwLCQt2UY1I7v9k0NeAZia1PVTzxlWF-4MBuQMMudC0M8ZhnPJsPfVPBlyakxJoQTRtNomXK9LTpFKn27qHYZMiun_Oj2giPJQp/s1125/WhatsApp%20Image%202025-05-28%20at%2012.51.43%20AM.jpeg" alt="Sony">
+      <div class="item-title">Sony</div>
+    </a>
+    <a href="go:us" class="item">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjkUKPP5_BsoNtGTWcReEdvN7L6WQxoFg8DtIkkJ2NVy8lNf5h0Rs3DSkb4uAqVjDZjPtXcFLX7hyoj80fv2QhcpeFfe3ucTugzP_vyCfl34cZI82Z0emPQETP13vZCd6HCNDChuu4K6yHTIJbBVQCERQ1v0pnFTOx2b_UV0rR-pU6VXMSt_XYsJFHNJeLx/s1125/WhatsApp%20Image%202025-05-28%20at%2012.57.23%20AM.jpeg" alt="Universal">
+      <div class="item-title">Universal Studios</div>
+    </a>
+    <a href="go:wb" class="item">
+      <img src="https://deadline.com/wp-content/uploads/2019/06/wbtvlogo.jpg" alt="Warner Bros">
+      <div class="item-title">Warner Bros</div>
+    </a>
+
+    <!-- Puedes seguir agregando más plataformas aquí -->
+  </div>
+
+  <!-- MENÚ INFERIOR FIJO -->
+  <div class="bottom-menu">
+    <a href="https://lacinelocuradelzplayhdgratis.blogspot.com/">
+      <i class="fas fa-home"></i>
+      <span>Home</span>
+    </a>
+    <a href="https://lacinelocuradelzplayhdgratis.blogspot.com/search/label/Serie">
+<i class="fas fa-tv"></i>
+      <span>Series</span>
+    </a>
+ <a href="https://lacinelocuradelzplayhdgratis.blogspot.com/search/label/Movie">
+<i class="fas fa-film"></i>
+      <span>Peliculas</span>
+    </a>
+    <a href="#" class="active">
+      <i class="fas fa-film"></i>
+      <span>Streaming</span>
+    </a>
+  </div>
+
+</body>
+</html>
